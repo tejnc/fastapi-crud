@@ -10,6 +10,6 @@ class Location(EmbeddedDocument):
 
 
 class Users(Document):
-    full_name = StringField(required=True ,min_length=3, max_length=30)
+    full_name = StringField(required=True, min_length=3, max_length=30)
     email = EmailField(requred=True)
     address = EmbeddedDocumentField(Location)

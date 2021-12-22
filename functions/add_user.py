@@ -1,8 +1,9 @@
 from utils.mongo import db_config
 from json import loads
-from models.users import Users , Location
+from models.users import Users, Location
 
-def add_user(body)-> Users:
+
+def add_user(body) -> Users:
     _full_name = body["full_name"]
     _email = body["email"]
     _province = body["province"]
@@ -11,11 +12,7 @@ def add_user(body)-> Users:
 
     db_config()
 
-    address = Location(
-        province = _province,
-        town= _town,
-        district=_district
-    )
+    address = Location(province=_province, town=_town, district=_district)
 
     user: Users = Users(
         full_name=_full_name,
@@ -28,5 +25,3 @@ def add_user(body)-> Users:
     user.reload()
 
     return user
-
-
