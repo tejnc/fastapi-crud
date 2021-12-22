@@ -1,0 +1,11 @@
+uvicorn
+fastapi
+dnspython
+black
+mongoengine
+mongoengine-goodjson
+pip-tools
+black
+gunicorn
+requests
+python-dotenv
